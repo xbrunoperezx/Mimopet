@@ -1,0 +1,138 @@
+[29-May-2025 13:32:21 Europe/Madrid] Conexión exitosa a la base de datos
+[29-May-2025 13:32:21 Europe/Madrid] Datos recibidos en procesar_reserva_frontend.php: Array
+(
+    [fechaReserva] => 2025-06-02
+    [horaDesde] => 08:00
+    [horaHasta] => 09:00
+    [tipoServicio] => Peluquería
+    [nombreCompleto] => Prueba
+    [email] => prueba1@caltenerpruebas.com
+    [telefono] => 999888777
+    [nombreMascota] => Firulais
+    [especieMascota] => Perro
+    [observaciones] => 
+)
+
+[29-May-2025 13:32:21 Europe/Madrid] Error en procesar_reserva_frontend.php: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'caltene1_mimopet.clientes' doesn't exist
+[29-May-2025 13:32:21 Europe/Madrid] Stack trace: #0 /home/caltene1/public_html/mimopet.caltenerweb.com/mitienda/backend/procesar_reserva_frontend.php(47): PDO->prepare()
+#1 {main}
+[29-May-2025 13:34:53 Europe/Madrid] Conexión exitosa a la base de datos
+[29-May-2025 13:34:53 Europe/Madrid] Datos recibidos en procesar_reserva_frontend.php: Array
+(
+    [fechaReserva] => 2025-06-02
+    [horaDesde] => 08:00
+    [horaHasta] => 09:00
+    [tipoServicio] => Peluquería
+    [nombreCompleto] => Prueba
+    [email] => prueba1@caltenerpruebas.com
+    [telefono] => 999888777
+    [nombreMascota] => Firulais
+    [especieMascota] => Perro
+    [observaciones] => 
+)
+
+[29-May-2025 13:34:53 Europe/Madrid] Fecha y hora recibidas del frontend:
+[29-May-2025 13:34:53 Europe/Madrid] fechaReserva original: 2025-06-02
+[29-May-2025 13:34:53 Europe/Madrid] horaDesde original: 08:00
+[29-May-2025 13:34:53 Europe/Madrid] horaHasta original: 09:00
+[29-May-2025 13:34:53 Europe/Madrid] Después de formatear:
+[29-May-2025 13:34:53 Europe/Madrid] fecha: 2025-06-02
+[29-May-2025 13:34:53 Europe/Madrid] hora_inicio: 08:00:00
+[29-May-2025 13:34:53 Europe/Madrid] hora_fin: 09:00:00
+[29-May-2025 13:46:52 Europe/Madrid] Conexión exitosa a la base de datos
+[29-May-2025 13:46:52 Europe/Madrid] Datos recibidos en procesar_reserva_frontend.php: Array
+(
+    [fechaReserva] => 2025-05-30
+    [horaDesde] => 08:00
+    [horaHasta] => 09:00
+    [tipoServicio] => Peluquería
+    [nombreCompleto] => 
+    [email] => 
+    [telefono] => 
+    [nombreMascota] => 
+    [especieMascota] => 
+    [observaciones] => 
+)
+
+[29-May-2025 13:46:52 Europe/Madrid] Error en procesar_reserva_frontend.php: El campo nombreCompleto es requerido
+[29-May-2025 13:46:52 Europe/Madrid] Stack trace: #0 {main}
+[30-May-2025 11:05:13 Europe/Madrid] Conexión exitosa a la base de datos
+[30-May-2025 11:05:13 Europe/Madrid] Parámetros recibidos - fecha: 2025-05-30, hora_inicio: 09:00, hora_fin: 11:30
+[30-May-2025 11:05:13 Europe/Madrid] Resultado de la consulta: Array
+(
+    [total] => 0
+)
+
+[30-May-2025 11:05:13 Europe/Madrid] Disponibilidad: Disponible
+[30-May-2025 11:05:45 Europe/Madrid] Conexión exitosa a la base de datos
+[30-May-2025 11:05:45 Europe/Madrid] Datos recibidos en procesar_reserva_frontend.php: Array
+(
+    [fechaReserva] => 2025-05-30
+    [horaDesde] => 09:00
+    [horaHasta] => 11:30
+    [tipoServicio] => Guardería
+    [nombreCompleto] => eloisa fernandex gutierrex
+    [email] => eloisa@gmail.com
+    [telefono] => 98451236
+    [nombreMascota] => almide
+    [especieMascota] => Conejo
+    [observaciones] => peludo
+)
+
+[30-May-2025 11:05:45 Europe/Madrid] Fecha y hora recibidas del frontend:
+[30-May-2025 11:05:45 Europe/Madrid] fechaReserva original: 2025-05-30
+[30-May-2025 11:05:45 Europe/Madrid] horaDesde original: 09:00
+[30-May-2025 11:05:45 Europe/Madrid] horaHasta original: 11:30
+[30-May-2025 11:05:45 Europe/Madrid] Después de formatear:
+[30-May-2025 11:05:45 Europe/Madrid] fecha: 2025-05-30
+[30-May-2025 11:05:45 Europe/Madrid] hora_inicio: 09:00:00
+[30-May-2025 11:05:45 Europe/Madrid] hora_fin: 11:30:00
+[02-Jun-2025 10:56:38 Europe/Madrid] Conexión exitosa a la base de datos
+[02-Jun-2025 10:56:38 Europe/Madrid] Parámetros recibidos - fecha: 2025-06-12, hora_inicio: 08:00, hora_fin: 11:30
+[02-Jun-2025 10:56:38 Europe/Madrid] Resultado de la consulta: Array
+(
+    [total] => 0
+)
+
+[02-Jun-2025 10:56:38 Europe/Madrid] Disponibilidad: Disponible
+[02-Jun-2025 10:56:40 Europe/Madrid] Conexión exitosa a la base de datos
+[02-Jun-2025 10:56:40 Europe/Madrid] Parámetros recibidos - fecha: 2025-06-12, hora_inicio: 08:30, hora_fin: 11:30
+[02-Jun-2025 10:56:40 Europe/Madrid] Resultado de la consulta: Array
+(
+    [total] => 0
+)
+
+[02-Jun-2025 10:56:40 Europe/Madrid] Disponibilidad: Disponible
+[02-Jun-2025 10:56:45 Europe/Madrid] Conexión exitosa a la base de datos
+[02-Jun-2025 10:56:45 Europe/Madrid] Datos recibidos en procesar_reserva_frontend.php: Array
+(
+    [fechaReserva] => 2025-06-12
+    [horaDesde] => 08:30
+    [horaHasta] => 11:30
+    [tipoServicio] => Cuidado a Domicilio
+    [nombreCompleto] => 
+    [email] => 
+    [telefono] => 
+    [nombreMascota] => 
+    [especieMascota] => 
+    [observaciones] => 
+)
+
+[02-Jun-2025 10:56:45 Europe/Madrid] Error en procesar_reserva_frontend.php: El campo nombreCompleto es requerido
+[02-Jun-2025 10:56:45 Europe/Madrid] Stack trace: #0 {main}
+[02-Jun-2025 13:20:45 Europe/Madrid] Conexión exitosa a la base de datos
+[02-Jun-2025 13:20:45 Europe/Madrid] Parámetros recibidos - fecha: 2025-06-26, hora_inicio: 08:00, hora_fin: 16:00
+[02-Jun-2025 13:20:45 Europe/Madrid] Resultado de la consulta: Array
+(
+    [total] => 0
+)
+
+[02-Jun-2025 13:20:45 Europe/Madrid] Disponibilidad: Disponible
+[02-Jun-2025 13:20:57 Europe/Madrid] Conexión exitosa a la base de datos
+[02-Jun-2025 13:20:57 Europe/Madrid] Parámetros recibidos - fecha: 2025-06-26, hora_inicio: 08:00, hora_fin: 15:00
+[02-Jun-2025 13:20:57 Europe/Madrid] Resultado de la consulta: Array
+(
+    [total] => 0
+)
+
+[02-Jun-2025 13:20:57 Europe/Madrid] Disponibilidad: Disponible

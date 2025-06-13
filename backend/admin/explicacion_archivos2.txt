@@ -1,0 +1,50 @@
+EXPLICACION CARPETA  BACKEND/ADMIN ( SERVIDOR) 
+
+login.php - El Controlador de Acceso 🔑
+
+setup_admin.sql - Configuración Inicial de la Base de Datos 📊
+Vamos a explicar cada archivo y su función:
+
+🔑 login.php:
+	Maneja el proceso de inicio de sesión
+	Verifica las credenciales del administrador
+	Crea la sesión cuando el login es exitoso
+	Incluye logs detallados para debugging
+	Devuelve respuestas en formato JSON
+
+📊 setup_admin.sql y 🛠️ setup_admin.php:
+
+	Crea la tabla de administradores
+	Define la estructura de la base de datos
+	Inserta un administrador por defecto
+	Campos importantes:
+	-ID
+	-Email
+	-Contraseña (hasheada)
+	-Nombre
+	-Fechas de creación/actualización
+
+
+
+🚪 logout.php:
+	Script simple para cerrar la sesión del administrador
+	Destruye la sesión actual
+	Redirige al login
+
+📊 obtener_ultimas_reservas.php y obtener_estadisticas.php:
+
+	Proporcionan datos para el dashboard administrativo
+	Muestran información sobre reservas recientes
+	Generan estadísticas importantes
+
+🔒 verificar_auth.php:
+
+	Verifica que el usuario esté autenticado
+	Se usa en todas las páginas administrativas
+	Protege las rutas administrativas
+
+Esta estructura de archivos forma el núcleo del sistema administrativo en el backend:
+-Maneja la autenticación
+-Configura la base de datos
+-Proporciona datos para el dashboard
+-Protege las rutas administrativas

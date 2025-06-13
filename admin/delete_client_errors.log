@@ -1,0 +1,106 @@
+[09-Jun-2025 11:04:12 Europe/Berlin] Conexión exitosa a la base de datos mimopet
+[09-Jun-2025 11:04:12 Europe/Berlin] === Inicio de eliminación de cliente ===
+[09-Jun-2025 11:04:12 Europe/Berlin] Datos recibidos: {"id":53}
+[09-Jun-2025 11:04:12 Europe/Berlin] Datos decodificados: Array
+(
+    [id] => 53
+)
+
+[09-Jun-2025 11:04:12 Europe/Berlin] Procesando eliminación del cliente ID: 53
+[09-Jun-2025 11:04:12 Europe/Berlin] Cliente encontrado, iniciando proceso de eliminación
+[09-Jun-2025 11:04:12 Europe/Berlin] Transacción iniciada
+[09-Jun-2025 11:04:12 Europe/Berlin] Mascotas encontradas: 
+[09-Jun-2025 11:04:12 Europe/Berlin] Transacción completada exitosamente
+[09-Jun-2025 11:04:12 Europe/Berlin] === Fin del proceso de eliminación ===
+[09-Jun-2025 11:23:05 Europe/Berlin] Conexión exitosa a la base de datos mimopet
+[09-Jun-2025 11:23:05 Europe/Berlin] === Inicio de eliminación de cliente ===
+[09-Jun-2025 11:23:05 Europe/Berlin] Datos recibidos: {"id":55}
+[09-Jun-2025 11:23:05 Europe/Berlin] Datos decodificados: Array
+(
+    [id] => 55
+)
+
+[09-Jun-2025 11:23:05 Europe/Berlin] Procesando eliminación del cliente ID: 55
+[09-Jun-2025 11:23:05 Europe/Berlin] Cliente encontrado, iniciando proceso de eliminación
+[09-Jun-2025 11:23:05 Europe/Berlin] Transacción iniciada
+[09-Jun-2025 11:23:05 Europe/Berlin] Mascotas encontradas: 33
+[09-Jun-2025 11:23:05 Europe/Berlin] Reservas eliminadas: 1
+[09-Jun-2025 11:23:05 Europe/Berlin] Mascotas eliminadas: 1
+[09-Jun-2025 11:23:05 Europe/Berlin] Transacción completada exitosamente
+[09-Jun-2025 11:23:05 Europe/Berlin] === Fin del proceso de eliminación ===
+[09-Jun-2025 11:59:34 Europe/Berlin] Conexión exitosa a la base de datos mimopet
+[09-Jun-2025 11:59:34 Europe/Berlin] === Inicio de eliminación de cliente ===
+[09-Jun-2025 11:59:34 Europe/Berlin] Datos recibidos: {"id":59}
+[09-Jun-2025 11:59:34 Europe/Berlin] Datos decodificados: Array
+(
+    [id] => 59
+)
+
+[09-Jun-2025 11:59:34 Europe/Berlin] Procesando eliminación del cliente ID: 59
+[09-Jun-2025 11:59:34 Europe/Berlin] Cliente encontrado, iniciando proceso de eliminación
+[09-Jun-2025 11:59:34 Europe/Berlin] Transacción iniciada
+[09-Jun-2025 11:59:34 Europe/Berlin] Mascotas encontradas: 
+[09-Jun-2025 11:59:34 Europe/Berlin] Transacción completada exitosamente
+[09-Jun-2025 11:59:34 Europe/Berlin] === Fin del proceso de eliminación ===
+[09-Jun-2025 12:59:46 Europe/Berlin] Conexión exitosa a la base de datos mimopet
+[09-Jun-2025 12:59:46 Europe/Berlin] === Inicio de eliminación de cliente ===
+[09-Jun-2025 12:59:46 Europe/Berlin] Datos recibidos: {"id":62}
+[09-Jun-2025 12:59:46 Europe/Berlin] Datos decodificados: Array
+(
+    [id] => 62
+)
+
+[09-Jun-2025 12:59:46 Europe/Berlin] Procesando eliminación del cliente ID: 62
+[09-Jun-2025 12:59:46 Europe/Berlin] Cliente encontrado, iniciando proceso de eliminación
+[09-Jun-2025 12:59:46 Europe/Berlin] Transacción iniciada
+[09-Jun-2025 12:59:46 Europe/Berlin] Mascotas encontradas: 
+[09-Jun-2025 12:59:46 Europe/Berlin] Transacción completada exitosamente
+[09-Jun-2025 12:59:46 Europe/Berlin] === Fin del proceso de eliminación ===
+[09-Jun-2025 13:22:17 Europe/Berlin] Conexión exitosa a la base de datos mimopet
+[09-Jun-2025 13:22:17 Europe/Berlin] === Inicio de eliminación de cliente ===
+[09-Jun-2025 13:22:17 Europe/Berlin] Datos recibidos: {"id":63}
+[09-Jun-2025 13:22:17 Europe/Berlin] Datos decodificados: Array
+(
+    [id] => 63
+)
+
+[09-Jun-2025 13:22:17 Europe/Berlin] Procesando eliminación del cliente ID: 63
+[09-Jun-2025 13:22:17 Europe/Berlin] Cliente encontrado, iniciando proceso de eliminación
+[09-Jun-2025 13:22:17 Europe/Berlin] Transacción iniciada
+[09-Jun-2025 13:22:17 Europe/Berlin] Mascotas encontradas: 41, 42
+[09-Jun-2025 13:22:17 Europe/Berlin] Reservas eliminadas: 2
+[09-Jun-2025 13:22:17 Europe/Berlin] Mascotas eliminadas: 2
+[09-Jun-2025 13:22:17 Europe/Berlin] Transacción completada exitosamente
+[09-Jun-2025 13:22:17 Europe/Berlin] === Fin del proceso de eliminación ===
+[09-Jun-2025 13:24:06 Europe/Berlin] Conexión exitosa a la base de datos mimopet
+[09-Jun-2025 13:24:06 Europe/Berlin] === Inicio de eliminación de cliente ===
+[09-Jun-2025 13:24:06 Europe/Berlin] Datos recibidos: {"id":58}
+[09-Jun-2025 13:24:06 Europe/Berlin] Datos decodificados: Array
+(
+    [id] => 58
+)
+
+[09-Jun-2025 13:24:06 Europe/Berlin] Procesando eliminación del cliente ID: 58
+[09-Jun-2025 13:24:06 Europe/Berlin] Cliente encontrado, iniciando proceso de eliminación
+[09-Jun-2025 13:24:06 Europe/Berlin] Transacción iniciada
+[09-Jun-2025 13:24:06 Europe/Berlin] Mascotas encontradas: 36
+[09-Jun-2025 13:24:06 Europe/Berlin] Reservas eliminadas: 1
+[09-Jun-2025 13:24:06 Europe/Berlin] Mascotas eliminadas: 1
+[09-Jun-2025 13:24:06 Europe/Berlin] Transacción completada exitosamente
+[09-Jun-2025 13:24:06 Europe/Berlin] === Fin del proceso de eliminación ===
+[09-Jun-2025 13:24:09 Europe/Berlin] Conexión exitosa a la base de datos mimopet
+[09-Jun-2025 13:24:09 Europe/Berlin] === Inicio de eliminación de cliente ===
+[09-Jun-2025 13:24:09 Europe/Berlin] Datos recibidos: {"id":57}
+[09-Jun-2025 13:24:09 Europe/Berlin] Datos decodificados: Array
+(
+    [id] => 57
+)
+
+[09-Jun-2025 13:24:09 Europe/Berlin] Procesando eliminación del cliente ID: 57
+[09-Jun-2025 13:24:09 Europe/Berlin] Cliente encontrado, iniciando proceso de eliminación
+[09-Jun-2025 13:24:09 Europe/Berlin] Transacción iniciada
+[09-Jun-2025 13:24:09 Europe/Berlin] Mascotas encontradas: 35
+[09-Jun-2025 13:24:09 Europe/Berlin] Reservas eliminadas: 1
+[09-Jun-2025 13:24:09 Europe/Berlin] Mascotas eliminadas: 1
+[09-Jun-2025 13:24:09 Europe/Berlin] Transacción completada exitosamente
+[09-Jun-2025 13:24:09 Europe/Berlin] === Fin del proceso de eliminación ===

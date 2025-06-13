@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MimoPet - Panel de mando</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+   
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #343a40;
+            padding-top: 1rem;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+        .nav-link {
+            color: rgba(255,255,255,.8);
+        }
+        .nav-link:hover {
+            color: #fff;
+        }
+        .nav-link.active {
+            background-color: rgba(255,255,255,.1);
+        }
+        .stat-card {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,.1);
+        }
+        .btn-disabled {
+            opacity: 0.5;
+            cursor: not-allowed !important;
+            pointer-events: none;
+        }
+        
+        .btn-disabled:hover {
+            opacity: 0.5;
+            box-shadow: none !important;
+            transform: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="px-3 mb-4">
+            <img src="../../assets/img/logo.png" alt="MimoPet Logo" height="40" class="me-2">
+            <span class="text-white">MimoPet Admin</span>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="dashboard.html">
+                    <i class="bi bi-speedometer2 me-2"></i> Panel de mando
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../admin/calendario.php">
+                    <i class="bi bi-calendar-check me-2"></i> Calendario
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="btnLogout">
+                    <i class="bi bi-box-arrow-right me-2"></i> Cerrar Sesión
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <h1 class="mb-4">Panel de mando</h1>
+            
+            <!-- Stats Cards -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card stat-card bg-primary text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Reservas Pendientes</h5>
+                            <h2 class="mb-0" id="reservasPendientes">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card bg-success text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Reservas Confirmadas</h5>
+                            <h2 class="mb-0" id="reservasConfirmadas">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card bg-info text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Reservas Completadas</h5>
+                            <h2 class="mb-0" id="reservasCompletadas">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card bg-danger text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Reservas Canceladas</h5>
+                            <h2 class="mb-0" id="reservasCanceladas">0</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Reservations -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Últimas Reservas</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Mascota</th>
+                                    <th>Servicio</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ultimasReservas">
+                                <!-- Las reservas se cargarán dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para cambiar estado -->
+    <div class="modal fade" id="cambiarEstadoModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambiar Estado de Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="reservaId">
+                    <div class="mb-3">
+                        <label for="nuevoEstado" class="form-label">Nuevo Estado</label>
+                        <select class="form-select" id="nuevoEstado">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="confirmada">Confirmada</option>
+                        </select>
+                        <div class="form-text text-info mt-2">
+                            <i class="bi bi-info-circle"></i>
+                            Para marcar reservas como completadas o canceladas, por favor utilice la sección de Calendario.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarCambioEstado()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver detalles -->
+    <div class="modal fade" id="detallesReservaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles de la Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Detalles de la Reserva -->
+                        <div class="col-md-6">
+                            <h6 class="border-bottom pb-2">Información de la Reserva</h6>
+                            <dl class="row">
+                                <dt class="col-sm-4">ID:</dt>
+                                <dd class="col-sm-8" id="detalleId"></dd>
+                                
+                                <dt class="col-sm-4">Fecha:</dt>
+                                <dd class="col-sm-8" id="detalleFecha"></dd>
+                                
+                                <dt class="col-sm-4">Horario:</dt>
+                                <dd class="col-sm-8" id="detalleHorario"></dd>
+                                
+                                <dt class="col-sm-4">Estado:</dt>
+                                <dd class="col-sm-8" id="detalleEstado"></dd>
+                                
+                                <dt class="col-sm-4">Creada:</dt>
+                                <dd class="col-sm-8" id="detalleCreacion"></dd>
+                            </dl>
+                        </div>
+                        
+                        <!-- Detalles del Cliente -->
+                        <div class="col-md-6">
+                            <h6 class="border-bottom pb-2">Información del Cliente</h6>
+                            <dl class="row">
+                                <dt class="col-sm-4">Nombre:</dt>
+                                <dd class="col-sm-8" id="detalleClienteNombre"></dd>
+                                
+                                <dt class="col-sm-4">Email:</dt>
+                                <dd class="col-sm-8" id="detalleClienteEmail"></dd>
+                                
+                                <dt class="col-sm-4">Teléfono:</dt>
+                                <dd class="col-sm-8" id="detalleClienteTelefono"></dd>
+                            </dl>
+                        </div>
+                        
+                        <!-- Detalles de la Mascota -->
+                        <div class="col-md-6 mt-4">
+                            <h6 class="border-bottom pb-2">Información de la Mascota</h6>
+                            <dl class="row">
+                                <dt class="col-sm-4">Nombre:</dt>
+                                <dd class="col-sm-8" id="detalleMascotaNombre"></dd>
+                                
+                                <dt class="col-sm-4">Especie:</dt>
+                                <dd class="col-sm-8" id="detalleMascotaEspecie"></dd>
+                                
+                                <dt class="col-sm-4">Raza:</dt>
+                                <dd class="col-sm-8" id="detalleMascotaRaza"></dd>
+                                
+                                <dt class="col-sm-4">Edad:</dt>
+                                <dd class="col-sm-8" id="detalleMascotaEdad"></dd>
+                            </dl>
+                        </div>
+                        
+                        <!-- Detalles del Servicio -->
+                        <div class="col-md-6 mt-4">
+                            <h6 class="border-bottom pb-2">Información del Servicio</h6>
+                            <dl class="row">
+                                <dt class="col-sm-4">Servicio:</dt>
+                                <dd class="col-sm-8" id="detalleServicioNombre"></dd>
+                                
+                                <dt class="col-sm-4">Descripción:</dt>
+                                <dd class="col-sm-8" id="detalleServicioDescripcion"></dd>
+                                
+                                <dt class="col-sm-4">Precio Base:</dt>
+                                <dd class="col-sm-8" id="detalleServicioPrecio"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Verificar autenticación usando sistema unificado
+        async function verificarAuth() {
+            try {
+                const response = await fetch('../../backend/admin/verificar_auth_unificado.php');
+                const data = await response.json();
+                
+                if (!data.autenticado) {
+                    // No autenticado, redirigir al login
+                    window.location.href = 'index.html';
+                } else {
+                    // Mostrar información del admin en la interfaz
+                    if (data.admin && data.admin.nombre) {
+                        const adminNameElement = document.querySelector('.admin-name');
+                        if (adminNameElement) {
+                            adminNameElement.textContent = data.admin.nombre;
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error al verificar autenticación:', error);
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Cargar estadísticas
+        async function cargarEstadisticas() {
+            try {
+                const response = await fetch('../../backend/admin/obtener_estadisticas.php');
+                const data = await response.json();
+                
+                document.getElementById('reservasPendientes').textContent = data.pendientes;
+                document.getElementById('reservasConfirmadas').textContent = data.confirmadas;
+                document.getElementById('reservasCompletadas').textContent = data.completadas;
+                document.getElementById('reservasCanceladas').textContent = data.canceladas;
+            } catch (error) {
+                console.error('Error al cargar estadísticas:', error);
+            }
+        }
+
+        // Cargar últimas reservas
+        async function cargarUltimasReservas() {
+            try {
+                const response = await fetch('../../backend/admin/obtener_ultimas_reservas.php');
+                const data = await response.json();
+                
+                const tbody = document.getElementById('ultimasReservas');
+                tbody.innerHTML = '';
+                
+                data.forEach(reserva => {
+                    const tr = document.createElement('tr');
+                    const estaDesactivado = reserva.estado === 'completada' || reserva.estado === 'cancelada';
+                    
+                    tr.innerHTML = `
+                        <td>${reserva.id}</td>
+                        <td>${reserva.cliente_nombre}</td>
+                        <td>${reserva.mascota_nombre}</td>
+                        <td>${reserva.servicio_nombre}</td>
+                        <td>${reserva.fecha_inicio}</td>
+                        <td>
+                            <span class="badge bg-${getEstadoColor(reserva.estado)}">${reserva.estado}</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="verDetalles(${reserva.id})">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="btn btn-sm btn-success ${estaDesactivado ? 'btn-disabled' : ''}" 
+                                    onclick="${estaDesactivado ? '' : `cambiarEstado(${reserva.id})`}"
+                                    title="${estaDesactivado ? 'Esta reserva ya está ' + reserva.estado : 'Cambiar estado'}"
+                                    ${estaDesactivado ? 'disabled' : ''}>
+                                <i class="bi bi-check-circle"></i>
+                            </button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (error) {
+                console.error('Error al cargar últimas reservas:', error);
+            }
+        }
+
+        function getEstadoColor(estado) {
+            const colores = {
+                'pendiente': 'warning',
+                'confirmada': 'success',
+                'completada': 'info',
+                'cancelada': 'danger'
+            };
+            return colores[estado] || 'secondary';
+        }
+
+        // Cerrar sesión con sistema unificado
+        document.getElementById('btnLogout').addEventListener('click', async function(e) {
+            e.preventDefault();
+            
+            const result = await Swal.fire({
+                title: '¿Cerrar sesión?',
+                text: '¿Estás seguro de que deseas cerrar sesión?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, cerrar sesión',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            });
+
+            if (result.isConfirmed) {
+                try {
+                    // Mostrar mensaje de cierre de sesión
+                    Swal.fire({
+                        title: 'Cerrando sesión...',
+                        text: 'Por favor espera',
+                        icon: 'info',
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+                    
+                    // Usar endpoint unificado de logout
+                    const response = await fetch('../../backend/admin/logout_unificado.php');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Logout exitoso
+                        await Swal.fire({
+                            icon: 'success',
+                            title: 'Sesión cerrada',
+                            text: 'Has cerrado sesión exitosamente',
+                            timer: 1500,
+                            showConfirmButton: false
+                        });
+                        
+                        // Redirigir al login
+                        window.location.href = 'index.html';
+                    } else {
+                        throw new Error(data.message || 'Error al cerrar sesión');
+                    }
+                } catch (error) {
+                    console.error('Error al cerrar sesión:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Hubo un problema al cerrar la sesión. Redirigiendo...',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                    
+                    // Redirigir de todas formas por seguridad
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                }
+            }
+        });
+
+        // Inicializar página
+        verificarAuth();
+        cargarEstadisticas();
+        cargarUltimasReservas();
+
+        // Actualizar datos cada 5 minutos
+        setInterval(() => {
+            cargarEstadisticas();
+            cargarUltimasReservas();
+        }, 300000);
+
+        // Función para mostrar el modal de cambio de estado
+        function cambiarEstado(reservaId) {
+            document.getElementById('reservaId').value = reservaId;
+            const modal = new bootstrap.Modal(document.getElementById('cambiarEstadoModal'));
+            modal.show();
+        }
+
+        // Función para guardar el cambio de estado
+        async function guardarCambioEstado() {
+            const reservaId = document.getElementById('reservaId').value;
+            const nuevoEstado = document.getElementById('nuevoEstado').value;
+            
+            try {
+                const response = await fetch('../../backend/admin/cambiar_estado_reserva.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        reserva_id: reservaId,
+                        nuevo_estado: nuevoEstado
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: 'Estado actualizado correctamente'
+                    });
+                    
+                    // Cerrar el modal
+                    bootstrap.Modal.getInstance(document.getElementById('cambiarEstadoModal')).hide();
+                    
+                    // Recargar los datos
+                    cargarEstadisticas();
+                    cargarUltimasReservas();
+                } else {
+                    throw new Error(data.error || 'Error al actualizar el estado');
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message || 'Error al actualizar el estado'
+                });
+            }
+        }
+
+        // Función para ver detalles de la reserva
+        async function verDetalles(reservaId) {
+            try {
+                const response = await fetch(`../../backend/admin/obtener_detalles_reserva.php?id=${reservaId}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const reserva = data.reserva;
+                    
+                    // Actualizar los campos del modal con la información
+                    document.getElementById('detalleId').textContent = reserva.id;
+                    document.getElementById('detalleFecha').textContent = reserva.fecha_inicio;
+                    document.getElementById('detalleHorario').textContent = `${reserva.hora_inicio} - ${reserva.hora_fin}`;
+                    document.getElementById('detalleEstado').textContent = reserva.estado;
+                    document.getElementById('detalleCreacion').textContent = reserva.created_at;
+                    
+                    document.getElementById('detalleClienteNombre').textContent = reserva.cliente_nombre;
+                    document.getElementById('detalleClienteEmail').textContent = reserva.cliente_email;
+                    document.getElementById('detalleClienteTelefono').textContent = reserva.cliente_telefono;
+                    
+                    document.getElementById('detalleMascotaNombre').textContent = reserva.mascota_nombre;
+                    document.getElementById('detalleMascotaEspecie').textContent = reserva.mascota_especie;
+                    document.getElementById('detalleMascotaRaza').textContent = reserva.mascota_raza || 'No especificada';
+                    document.getElementById('detalleMascotaEdad').textContent = reserva.mascota_edad || 'No especificada';
+                    
+                    document.getElementById('detalleServicioNombre').textContent = reserva.servicio_nombre;
+                    document.getElementById('detalleServicioDescripcion').textContent = reserva.servicio_descripcion || 'Sin descripción';
+                    document.getElementById('detalleServicioPrecio').textContent = `€${reserva.servicio_precio}`;
+                    
+                    // Mostrar el modal
+                    const modal = new bootstrap.Modal(document.getElementById('detallesReservaModal'));
+                    modal.show();
+                } else {
+                    throw new Error(data.error || 'Error al obtener detalles de la reserva');
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message || 'Error al obtener detalles de la reserva'
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

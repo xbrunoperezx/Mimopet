@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MimoPet - Panel Administrativo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+        .login-card {
+            max-width: 400px;
+            width: 100%;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-logo img {
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .back-to-site {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <a href="../" class="back-to-site btn btn-outline-primary">
+            <i class="bi bi-arrow-left"></i> Volver al sitio
+        </a>
+        
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="../assets/img/logo.png" alt="MimoPet Logo">
+                <h2>Panel Administrativo</h2>
+                <p class="text-muted">Ingresa tus credenciales para acceder</p>
+            </div>
+            
+            <form id="loginForm" action="procesar_login.php" method="POST">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope"></i>
+                        </span>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-lock"></i>
+                        </span>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-login">
+                    Iniciar Sesión
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

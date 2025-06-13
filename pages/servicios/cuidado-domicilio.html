@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MimoPet - Cuidado a Domicilio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../../assets/img/logo.png" alt="MimoPet Logo" height="40" class="me-2">
+                <span class="brand-text">MimoPet</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-heart-fill me-1"></i>Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="peluqueria.html">
+                                <i class="bi bi-scissors me-2"></i>Peluquería
+                            </a></li>
+                            <li><a class="dropdown-item" href="cuidado-domicilio.html">
+                                <i class="bi bi-house-heart me-2"></i>Cuidado a domicilio
+                            </a></li>
+                            <li><a class="dropdown-item" href="guarderia.html">
+                                <i class="bi bi-calendar2-heart me-2"></i>Guardería
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-calendar-check me-1"></i>Reservas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../reservas/calendario.html">
+                                <i class="bi bi-calendar-plus me-2"></i>Hacer una Reserva
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../quienes-somos.html">
+                            <i class="bi bi-people-fill me-1"></i>¿Quiénes Somos?
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link profile-link" href="../admin/">
+                            <i class="bi bi-shield-lock me-1"></i>Área privada
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido del Servicio -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="../../assets/img/cuidado.png" alt="Cuidado a Domicilio" class="img-fluid">
+
+                    <div class="pricing">
+                        <h3>Precios desde:</h3>
+                        <p class="lead">8€/hora</p>
+                        <small class="text-muted">*El precio puede variar según el tipo de mascota y servicios adicionales</small>
+                    </div>
+
+                    <a href="../reservas/calendario.html?servicio=cuidado-domicilio" class="btn btn-paw mt-4 w-100">
+                        <img src="../../assets/img/huella.png" alt="Huella" class="paw-icon">
+                        Reservar Ahora
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <h1>Cuidado a Domicilio</h1>
+                    <p class="lead">Cuidamos de tu mascota en la comodidad de tu hogar, manteniendo su rutina y ambiente familiar.</p>
+                    
+                    <div class="service-features">
+                        <h3>Nuestros Servicios Incluyen:</h3>
+                        <ul>
+                            <li>Paseos programados</li>
+                            <li>Alimentación según horarios establecidos</li>
+                            <li>Administración de medicamentos</li>
+                            <li>Limpieza de áreas y cajas de arena</li>
+                            <li>Juegos y ejercicios</li>
+                            <li>Reportes diarios con fotos</li>
+                            <li>Atención personalizada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>MimoPet</h5>
+                    <p>Cuidando a tus mascotas como si fueran nuestras desde 2023.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="../../index.html">
+                                <i class="bi bi-house-heart-fill"></i>
+                                Página Principal
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../index.html#servicios">
+                                <i class="bi bi-stars"></i>
+                                Nuestros Servicios
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../reservas/calendario.html">
+                                <i class="bi bi-calendar-heart-fill"></i>
+                                Reserva tu Cita
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../quienes-somos.html">
+                                <i class="bi bi-heart-fill"></i>
+                                Conócenos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Síguenos</h5>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" title="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" title="Twitter">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <small>&copy; 2023 MimoPet. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

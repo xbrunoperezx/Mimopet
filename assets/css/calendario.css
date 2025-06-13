@@ -1,0 +1,160 @@
+.calendario-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.calendario-body.active {
+    max-height: 500px;
+}
+
+/* Estilos del calendario */
+.service-detail {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.calendario-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.calendario-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#diasMes {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    padding: 15px;
+}
+
+.dia {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dia:hover:not(.no-disponible):not(.otro-mes) {
+    background-color: #e9ecef;
+    border-color: #0d6efd;
+}
+
+.dia.seleccionado {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+.dia.no-disponible {
+    background-color: #f8d7da;
+    color: #842029;
+    cursor: not-allowed;
+    border-color: #f5c2c7;
+}
+
+.dia.actual {
+    border: 2px solid #0d6efd;
+    font-weight: bold;
+}
+
+.dia.otro-mes {
+    color: #6c757d;
+    background-color: #f8f9fa;
+    cursor: default;
+}
+
+.dia.disponible {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.dia.disponible:hover {
+    background-color: #e9ecef;
+}
+
+/* Estilos para el formulario */
+#formularioReserva {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+#formularioReserva .card-body {
+    padding: 30px;
+}
+
+/* Estilos para los controles del calendario */
+.form-select {
+    min-width: 120px;
+}
+
+.btn-group .btn {
+    padding: 8px 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .calendario-controles {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-select {
+        width: 100%;
+    }
+    
+    .btn-group {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .dia {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+/* Ajuste para inputs type="time" */
+input[type="time"] {
+    padding: 0.375rem 0.75rem;
+}
+
+/* Añadiendo tooltip para los días no disponibles */
+[title] {
+    position: relative;
+}
+
+.pasado {
+    color: red;
+}
+
+.alert-info {
+    margin-top: 20px;
+}
