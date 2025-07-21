@@ -3,10 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 try {
-    $host = 'localhost';
+    $host = 'ikw4cos008ksg4w4g04cso4k';
     $dbname = 'mimopet';
-    $username = 'root';
-    $password = 'root';
+    $username = 'bperez';
+    $password = 'Arriondas1996';
     
     // Intentar crear la conexión con opciones específicas
     $options = [
