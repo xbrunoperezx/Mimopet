@@ -1,5 +1,8 @@
 FROM php:8.2-apache
 
+# Instalar PDO MySQL y extensiones necesarias
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Copia el código al document root
 COPY . /var/www/html/
 
