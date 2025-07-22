@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 
 try {
     $host = 'ikw4cos008ksg4w4g04cso4k';
