@@ -164,4 +164,4 @@ function sesionExpirada() {
 function regenerarSesion() {
     session_regenerate_id(true);
 }
-?> 
+?>
