@@ -46,4 +46,4 @@ try {
     
     throw new PDOException("Error de conexión a la base de datos. Por favor, verifica la configuración.");
 }
-?> 
+?>
