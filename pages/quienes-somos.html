@@ -1,306 +1,384 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MimoPet - ¿Quiénes Somos?</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
-
-    <script>
-        window.dataLayer= window.dataLayer || [];
-        window.dataLayer.push ({
-            page: {
-                channel: "mimopet",
-                name: "mimopet:quienes-somos",
-                category: "otros"
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
 
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MGP4W9XF');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MGP4W9XF");
+    </script>
     <!-- End Google Tag Manager -->
+
+    <script>
+      
+      window.dataLayer.push({
+        event: "info_paginas",
+        page: {
+          channel: "mimopet",
+          name: "mimopet:quienes-somos",
+          category: "otros",
+        },
+      });
+    </script>
     <!-- Estilos específicos para Quiénes Somos -->
     <style>
-        .about-hero {
-            padding-top: 120px;
-            padding-bottom: 80px;
-            position: relative;
-            background: var(--color-bg-warm);
-        }
+      .about-hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        position: relative;
+        background: var(--color-bg-warm);
+      }
 
-        .about-hero::before {
-            content: '🐾';
-            position: absolute;
-            top: 80px;
-            left: 20px;
-            font-size: 2rem;
-            opacity: 0.1;
-            transform: rotate(-30deg);
-        }
+      .about-hero::before {
+        content: "🐾";
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        font-size: 2rem;
+        opacity: 0.1;
+        transform: rotate(-30deg);
+      }
 
-        .about-hero::after {
-            content: '🐾';
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 2rem;
-            opacity: 0.1;
-            transform: rotate(30deg);
-        }
-        
-        .about-image {
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.1);
-            max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+      .about-hero::after {
+        content: "🐾";
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-size: 2rem;
+        opacity: 0.1;
+        transform: rotate(30deg);
+      }
 
-        .about-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.15);
-        }
+      .about-image {
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(139, 69, 19, 0.1);
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .about-content {
-            background: linear-gradient(145deg, #fff, var(--color-bg-content));
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
-            position: relative;
-        }
+      .about-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(139, 69, 19, 0.15);
+      }
 
-        .about-content h1 {
-            color: var(--color-primary);
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            font-family: 'Nunito', sans-serif;
-            position: relative;
-            padding-bottom: 1rem;
-        }
+      .about-content {
+        background: linear-gradient(145deg, #fff, var(--color-bg-content));
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+        position: relative;
+      }
 
-        .about-content h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-paw), transparent);
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
+      .about-content h1 {
+        color: var(--color-primary);
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        font-family: "Nunito", sans-serif;
+        position: relative;
+        padding-bottom: 1rem;
+      }
 
-        .about-content h1:hover::after {
-            width: 150px;
-        }
+      .about-content h1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-paw), transparent);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
 
-        .about-content .lead {
-            color: var(--color-text-light);
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
+      .about-content h1:hover::after {
+        width: 150px;
+      }
 
-        .about-content p {
-            color: var(--color-text-light);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
+      .about-content .lead {
+        color: var(--color-text-light);
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
 
-        .highlight {
-            color: var(--color-primary);
-            font-weight: 700;
-            background: linear-gradient(120deg, var(--color-primary), var(--color-paw));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            padding: 0 2px;
-        }
+      .about-content p {
+        color: var(--color-text-light);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
 
-        .contact-info {
-            background: linear-gradient(145deg, #fff, var(--color-bg-content));
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
-        }
+      .highlight {
+        color: var(--color-primary);
+        font-weight: 700;
+        background: linear-gradient(
+          120deg,
+          var(--color-primary),
+          var(--color-paw)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        padding: 0 2px;
+      }
 
-        .contact-info i {
-            color: var(--color-paw);
-            margin-right: 10px;
-        }
+      .contact-info {
+        background: linear-gradient(145deg, #fff, var(--color-bg-content));
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+      }
+
+      .contact-info i {
+        color: var(--color-paw);
+        margin-right: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGP4W9XF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MGP4W9XF"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../assets/img/logo.png" alt="MimoPet Logo" height="40" class="me-2">
-                <span class="brand-text">MimoPet</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="bi bi-heart-fill me-1"></i>Servicios
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="servicios/peluqueria.html">
-                                <i class="bi bi-scissors me-2"></i>Peluquería
-                            </a></li>
-                            <li><a class="dropdown-item" href="servicios/cuidado-domicilio.html">
-                                <i class="bi bi-house-heart me-2"></i>Cuidado a domicilio
-                            </a></li>
-                            <li><a class="dropdown-item" href="servicios/guarderia.html">
-                                <i class="bi bi-calendar2-heart me-2"></i>Guardería
-                            </a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="bi bi-calendar-check me-1"></i>Reservas
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="reservas/calendario.html">
-                                <i class="bi bi-calendar-plus me-2"></i>Hacer una Reserva
-                            </a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="quienes-somos.html">
-                            <i class="bi bi-people-fill me-1"></i>¿Quiénes Somos?
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link profile-link" href="admin/">
-                            <i class="bi bi-shield-lock me-1"></i>Área privada
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../assets/img/logo.png"
+            alt="MimoPet Logo"
+            height="40"
+            class="me-2"
+          />
+          <span class="brand-text">MimoPet</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-heart-fill me-1"></i>Servicios
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="servicios/peluqueria.html">
+                    <i class="bi bi-scissors me-2"></i>Peluquería
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="servicios/cuidado-domicilio.html"
+                  >
+                    <i class="bi bi-house-heart me-2"></i>Cuidado a domicilio
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="servicios/guarderia.html">
+                    <i class="bi bi-calendar2-heart me-2"></i>Guardería
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-calendar-check me-1"></i>Reservas
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="reservas/calendario.html">
+                    <i class="bi bi-calendar-plus me-2"></i>Hacer una Reserva
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="quienes-somos.html">
+                <i class="bi bi-people-fill me-1"></i>¿Quiénes Somos?
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link profile-link" href="admin/">
+                <i class="bi bi-shield-lock me-1"></i>Área privada
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Sección Principal -->
     <section class="about-hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="about-content">
-                        <h1>¿Quiénes Somos?</h1>
-                        <p class="lead">
-                            Bienvenidos a <span class="highlight">MimoPet</span>, tu conexión con los mejores servicios para mascotas en <span class="highlight">Asturias, concretamente en Gijón</span>.
-                        </p>
-                        <p>
-                            Nos especializamos en <span class="highlight">conectar a dueños de mascotas con los mejores profesionales del sector</span>. Como intermediarios expertos, seleccionamos cuidadosamente a las empresas más cualificadas para garantizar que tu mascota reciba el mejor cuidado posible.
-                        </p>
-                        <p>
-                            Fundada en <span class="highlight">2025</span>, nuestra empresa nació de la pasión por el bienestar animal y el compromiso de ofrecer servicios de la más alta calidad. Aunque somos jóvenes, nuestro equipo cuenta con amplia experiencia en el sector y un profundo conocimiento de las necesidades de las mascotas.
-                        </p>
-                        <div class="contact-info">
-                            <h5 class="mb-3">Contacto</h5>
-                            <p class="mb-2">
-                                <i class="bi bi-geo-alt"></i> Gijón, Asturias<br>
-                                <i class="bi bi-envelope"></i> info@mimopet.com<br>
-                                <i class="bi bi-phone"></i> +34 123 456 789
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <a href="reservas/calendario.html" class="btn btn-paw">
-                                <img src="../assets/img/huella.png" alt="Huella" class="paw-icon">
-                                Reserva Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="../assets/img/tiendaMimo.jpg" alt="Tienda MimoPet" class="about-image">
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="about-content">
+              <h1>¿Quiénes Somos?</h1>
+              <p class="lead">
+                Bienvenidos a <span class="highlight">MimoPet</span>, tu
+                conexión con los mejores servicios para mascotas en
+                <span class="highlight">Asturias, concretamente en Gijón</span>.
+              </p>
+              <p>
+                Nos especializamos en
+                <span class="highlight"
+                  >conectar a dueños de mascotas con los mejores profesionales
+                  del sector</span
+                >. Como intermediarios expertos, seleccionamos cuidadosamente a
+                las empresas más cualificadas para garantizar que tu mascota
+                reciba el mejor cuidado posible.
+              </p>
+              <p>
+                Fundada en <span class="highlight">2025</span>, nuestra empresa
+                nació de la pasión por el bienestar animal y el compromiso de
+                ofrecer servicios de la más alta calidad. Aunque somos jóvenes,
+                nuestro equipo cuenta con amplia experiencia en el sector y un
+                profundo conocimiento de las necesidades de las mascotas.
+              </p>
+              <div class="contact-info">
+                <h5 class="mb-3">Contacto</h5>
+                <p class="mb-2">
+                  <i class="bi bi-geo-alt"></i> Gijón, Asturias<br />
+                  <i class="bi bi-envelope"></i> info@mimopet.com<br />
+                  <i class="bi bi-phone"></i> +34 123 456 789
+                </p>
+              </div>
+              <div class="mt-4">
+                <a href="reservas/calendario.html" class="btn btn-paw">
+                  <img
+                    src="../assets/img/huella.png"
+                    alt="Huella"
+                    class="paw-icon"
+                  />
+                  Reserva Ahora
+                </a>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="../assets/img/tiendaMimo.jpg"
+              alt="Tienda MimoPet"
+              class="about-image"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5>MimoPet</h5>
-                    <p>Cuidando a tus mascotas como si fueran nuestras desde 2025.</p>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Enlaces Rápidos</h5>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="../index.html">
-                                <i class="bi bi-house-heart-fill"></i>
-                                Página Principal
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../index.html#servicios">
-                                <i class="bi bi-stars"></i>
-                                Nuestros Servicios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="reservas/calendario.html">
-                                <i class="bi bi-calendar-heart-fill"></i>
-                                Reserva tu Cita
-                            </a>
-                        </li>
-                        <li>
-                            <a href="quienes-somos.html">
-                                <i class="bi bi-heart-fill"></i>
-                                Conócenos
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Síguenos</h5>
-                    <div class="footer-social">
-                        <a href="#" title="Facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#" title="Instagram">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#" title="Twitter">
-                            <i class="bi bi-twitter-x"></i>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>MimoPet</h5>
+            <p>Cuidando a tus mascotas como si fueran nuestras desde 2025.</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Enlaces Rápidos</h5>
+            <ul class="footer-links">
+              <li>
+                <a href="../index.html">
+                  <i class="bi bi-house-heart-fill"></i>
+                  Página Principal
+                </a>
+              </li>
+              <li>
+                <a href="../index.html#servicios">
+                  <i class="bi bi-stars"></i>
+                  Nuestros Servicios
+                </a>
+              </li>
+              <li>
+                <a href="reservas/calendario.html">
+                  <i class="bi bi-calendar-heart-fill"></i>
+                  Reserva tu Cita
+                </a>
+              </li>
+              <li>
+                <a href="quienes-somos.html">
+                  <i class="bi bi-heart-fill"></i>
+                  Conócenos
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Síguenos</h5>
+            <div class="footer-social">
+              <a href="#" title="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" title="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="#" title="Twitter">
+                <i class="bi bi-twitter-x"></i>
+              </a>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <small>&copy; 2025 MimoPet. Todos los derechos reservados.</small>
-            </div>
+          </div>
         </div>
+        <hr class="my-4" />
+        <div class="text-center">
+          <small>&copy; 2025 MimoPet. Todos los derechos reservados.</small>
+        </div>
+      </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> 
+  </body>
+</html>
