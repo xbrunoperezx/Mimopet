@@ -356,7 +356,7 @@
         });
 
   //----------------------------------------------------------------------------------------------------------------------------------------------------      
-      //click en los botones del FOOTER  de los enlaces rapidos, seguramente necesitamos un quereySelectorAll con forEach para recorrerlos
+      //click en los botones del FOOTER  de los "ENLACES RAPIDOS" , seguramente necesitamos un querySelectorAll con forEach para recorrerlos
       //dado que son 4 enlances los que tenemos que seleccionar.
 
       //aqui vamos a selecionar el selector que tenga esa clase que y todos los <a> que haga referencia
@@ -398,8 +398,25 @@
 
       });
 
+  //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
+      //Aqui click en los <ul> de los enlaces de navegacion de la parte NAVBAR , de "SERVICIOS RESERVAS" .
       
+        //aqui selecionamos que queremos clikear los <a> dentro de los dropdown
+      var navegadores= document.querySelectorAll('.navbar-nav .dropdown-menu a');
+        navegadores.forEach(function(navegador){
+          navegador.addEventListener('click', function(){
+
+            //aqui accedemos al primer elemento padre desde de el selector de los <ul> de arriba, y selecionamos dentro de <a> 
+            var elementos= this.closest('.dropdown').querySelector('.nav-link').textContent.trim();
+
+            var nav = this.textContent.trim();
+
+            sendEventGA('click', `Estas en la Seccion de  : ${elementos} | Desplegable: ${nav} `);
+
+          
+          });
+      });
     </script>
     
     
