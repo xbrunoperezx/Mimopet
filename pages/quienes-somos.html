@@ -380,5 +380,17 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      //click en boton de reservar ahora para que recoja la imformacion y la envie a gA4
+      document.querySelector('.btn.btn-paw').addEventListener('click', function (){
+
+        var boton = this.textContent.trim();
+        
+        sendEventGA('click', ` Accionando boton de : ${boton}`);
+
+      });
+
+    </script>
   </body>
 </html>
